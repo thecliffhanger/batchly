@@ -1,11 +1,15 @@
 # batchly
 
+[![PyPI version](https://badge.fury.io/py/batchly.svg)](https://pypi.org/project/batchly)
+[![Python versions](https://img.shields.io/pypi/pyversions/batchly.svg)](https://pypi.org/project/batchly)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Batch processing made simple — concurrency, retries, progress, and error handling.
 
 ## Install
 
 ```bash
-pip install -e .
+pip install batchly
 ```
 
 ## Quick Start
@@ -45,4 +49,10 @@ b.foreach(save, filtered)
 - **Streaming** — Generator mode for results as they complete
 - **Zero dependencies** — stdlib only
 
-MIT License.
+## License
+
+MIT
+
+---
+
+Part of the [thecliffhanger](https://github.com/thecliffhanger) open source suite.
