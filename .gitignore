@@ -1,1 +1,7 @@
 src/batchly.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+.hypothesis/
+dist/
+*.egg-info/
