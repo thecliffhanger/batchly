@@ -15,24 +15,25 @@ pip install batchly
 ## Quick Start
 
 ```python
-from batchly import batch, batch_map, batch_filter, batch_for_each
+from batchly import batch, Batch, batch_map, batch_filter, batch_for_each, ProgressBar
 
 # Decorator
 @batch(max_workers=10, retries=3)
 def process(item):
     return item * 2
 
-results = process([1, 2, 3, 4, 5])
+results = process([1, 2, 3, 4, 5])  # list[BatchResult]
 
 # Functional
-results = batch_map(transform, items, max_workers=20, retries=3)
-keep = batch_filter(predicate, items, max_workers=10)
-batch_for_each(side_effect, items, max_workers=5)
+results = batch_map(transform, items, max_workers=20, retries=3)  # list[BatchResult]
+keep = batch_filter(predicate, items, max_workers=10)  # list of matching items
+batch_for_each(side_effect, items, max_workers=5)  # side effects only
 
 # Reusable context
 b = Batch(max_workers=10, retries=3, progress=ProgressBar())
-results = b.map(fn, items)
-filtered = b.filter(pred, results)
+results = b.map(fn, items)  # list[BatchResult]
+values = [r.value for r in results if r.ok]
+filtered = b.filter(pred, values)  # list of matching items
 b.foreach(save, filtered)
 ```
 
