@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Batch processing made simple — concurrency, retries, progress, and error handling"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-authors = [{name = "Teja"}]
+authors = [{name = "Ravi Teja Prabhala Venkata"}]
 dependencies = []
 
 [project.optional-dependencies]
